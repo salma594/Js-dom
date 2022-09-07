@@ -1,55 +1,29 @@
-// let element;
-// element=document.getElementById("title");
-// console.log(element);
 
-// let paragraph;
-// paragraph=document.getElementById("lorem");
-// console.log(paragraph);
+let count = 0;
 
-// let btn = document.getElementById('btnDestination');
-//         let output = document.getElementById('output');
-
-//     btn.addEventListener('click', () => {
-//         let destination = document.getElementsByName('destination');
-//         destination.forEach((destination) => {
-//             if (destination.checked) {
-//             output.innerText = `You selected: ${destination.value}`;
-//                 }
-//             });
-
-//         });
-
-// let content, input, btn;
-// content = document.querySelector("#content");
-// input = document.querySelector("#input");
-// btn = document.querySelector("#btn");
-
-// btn.addEventListener("click", function () {
-//   let name = input.value;
-//   if (name.length > 0) {
-//     content.textContent += " " + name;
-//   }
-//   input.value = "";
-// });
-
-
-let colors=[ "red","blue","green","gray","pink","purple","yellow","black","coral"];
-let btn = document.querySelector("#btn");
-let body = document.querySelector("body");
-
-function changeColor(event) {
-  let randomNumber = Math.floor(Math.random() * colors.length);
-  console.log("the color is " + randomNumber);
-  body.style.backgroundColor = colors[randomNumber];
+function inc() {
+  document.getElementById("output").innerHTML=++count;
+  changecolor();
+}
+function reset() {
+  count=0
+  document.getElementById("output").innerHTML=
+  0;
+  changecolor();
 }
 
-btn.addEventListener("click", changeColor);
+function dec() {
+  document.getElementById("output").innerHTML=--count;
+  changecolor();
+}
+function changecolor(){
+  if(output.innerHTML>0){
+    output.style.color='blue'
+  }
+  else if(output.innerHTML==0){
+    output.style.color='yellow'
+  }
+  else
+  output.style.color='red'
+}
 
-
-// let input = document.querySelector("#input");
-// let body = document.querySelector("body");
-
-// function changeColor(event){
-// body.style.backgroundColor = event.target.value;
-// }
-// input.addEventListener("input", changeColor);
