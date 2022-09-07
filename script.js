@@ -1,29 +1,16 @@
+let body= document.querySelector("body");
+let inputs = document.querySelectorAll("input");
 
-let count = 0;
+inputs[0].addEventListener("input",function(){
+    setLinere(inputs[0].value,inputs[1].value);
+});
+inputs[1].addEventListener("input",function(){
+    setLinere(inputs[0].value,inputs[1].value);
+});
 
-function inc() {
-  document.getElementById("output").innerHTML=++count;
-  changecolor();
-}
-function reset() {
-  count=0
-  document.getElementById("output").innerHTML=
-  0;
-  changecolor();
-}
+setLinere(inputs[0].value,inputs[1].value);
 
-function dec() {
-  document.getElementById("output").innerHTML=--count;
-  changecolor();
-}
-function changecolor(){
-  if(output.innerHTML>0){
-    output.style.color='blue'
-  }
-  else if(output.innerHTML==0){
-    output.style.color='yellow'
-  }
-  else
-  output.style.color='red'
+function setLinere(color1,color2){
+    document.body.style.background=`linear-gradient(to right,${color1},${color2})`;
 }
 
