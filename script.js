@@ -21,7 +21,7 @@ function changecolor(){
     output.style.color='blue'
   }
   else if(output.innerHTML==0){
-    output.style.color='yellow'
+    output.style.color="#c07860";
   }
   else
   output.style.color='red'

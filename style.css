@@ -16,7 +16,7 @@ body{
     text-align: center;
     width: 50%;
     margin: auto;
-    border: 2px solid black;
+    border: 2px solid bisque;
     border-radius: 5px;
     padding: 50px;
     box-sizing: border-box;
@@ -24,6 +24,8 @@ body{
 }
 h2{
     text-transform: uppercase;
+    font-size: 2em;
+    color: #a86030;
 }
 button{
     padding: 10px 30px;
@@ -31,4 +33,5 @@ button{
     border-radius: 50%; 
     border: 1px solid transparent;
     box-shadow: 0 0 20px 0 rgb(144, 142, 142);
+    color: #a86030;
 }
