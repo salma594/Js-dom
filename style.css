@@ -1,5 +1,5 @@
 .hide{
-    display: none;
+display: none;
 }
 
 div{
@@ -21,7 +21,7 @@ p{
    padding: 30px;
    box-sizing: border-box;
    background-color: rgb(242, 237, 237);
-    transition: height 1s linear 71.7%;
+   transition: all ease 0.4s;
 }
 button{
     background-color: transparent;
