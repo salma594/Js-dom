@@ -36,10 +36,10 @@ function Compariason(){
 
   if(saisie.value.length<=0){
     mot.innerText= "Box empty choose a number";
-    mot.style.color="blue";
+    mot.style.color="brown";
   }else if(saisie.value == res){
     mot.innerText= "Excellent you won";
-    mot.style.color="green";
+    mot.style.color="Blue";
   }
   else{
     mot.innerText= "You lost";
