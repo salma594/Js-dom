@@ -1,53 +1,74 @@
-let affichage = document.getElementById("affichage");
- let btn1 = document.getElementById("control");
- let btn2 = document.getElementById("reje");
- let saisie = document.querySelector("input");
- let mot = document.getElementById("fin");
- let zoneA = document.getElementById("jeu");
- let zoneB =document.getElementById("finJeu");
+let radioButtons = document.querySelectorAll('input[name="lvl"]');
+let instructions = document.getElementById("instructions");
+let button = document.querySelector("button");
+let essays = document.getElementById("chance");
+let userGuess = document.getElementById("input");
+let result = document.getElementById("results");
+let audios = document.querySelectorAll("audio");
+let chancenbr, nombreAleatoire;
 
- function Findejeu(){
-  zoneA.style.display="none";
-  zoneB.style.display="block";
- }
- function Rejouer(){
-  Somme();
-  zoneB.style.display="none";
-  zoneA.style.display="block"
- }
-
- function Aleatoire(min, max)
- {
-  return Math.floor(Math.random() * (max - min)) + min;
-}
-let entierA;
- let entierB;
-let res ;
-function Somme() {
-  entierA = Aleatoire(1, 100);
-  entierB = Aleatoire(1, 100);
-  res = entierA+entierB;
- affichage.innerText = entierA+" "+"+"+" "+entierB;
- affichage.style.color="black";
- console.log(res);
+function selection(min, max, chance) {
+  instructions.textContent = `Enter a number btw ${min} and ${max}`;
+  essays.textContent = `You have ${chance} chances to guess the right number`;
+  let randomNumber = Math.floor(Math.random() * max) + min;
+  chancenbr = chance;
+  nombreAleatoire = randomNumber;
+  result.innerText = "";
+  nombreTrouve = false;
 }
 
-function Compariason(){
+function easylvl() {
+  selection(1, 10, 3);
+  console.log(nombreAleatoire);
+}
+function mlvl() {
+  selection(1, 100, 5);
+  console.log(nombreAleatoire);
+}
+function hardlvl() {
+  selection(1, 1000, 10);
+  console.log(nombreAleatoire);
+}
 
-  if(saisie.value.length<=0){
-    mot.innerText= "Box empty choose a number";
-    mot.style.color="blue";
-  }else if(saisie.value == res){
-    mot.innerText= "Excellent you won";
-    mot.style.color="green";
+function gameOver() {
+  document.getElementById("gamArea").style.display = "none";
+  document.getElementById("restart").style.display = "block";
+}
+function Restart() {
+  selection();
+  document.getElementById("gamArea").style.display = "block";
+  document.getElementById("restart").style.display = "none";
+}
+
+function guessing() {
+  let userGuessValue = Number(userGuess.value);
+
+  if (userGuessValue > nombreAleatoire) {
+    result.innerText = `${userGuessValue} is high , enter a lower number`;
+    chancenbr--;
+  } else if (userGuessValue === nombreAleatoire) {
+    result.innerText = "Good job !! ";
+    result.style.color = "green";
+    nombreTrouve = true;
+  } else {
+    result.innerText = `${userGuessValue} is low , enter a higher number`;
+    chancenbr--;
   }
-  else{
-    mot.innerText= "You lost";
-    mot.style.color="red";
+
+  if (chancenbr === 0 && nombreTrouve === false) {
+    result.innerText = "You lost ";
+    result.style.color = "red";
+    audios[1].play();
+    gameOver();
   }
-  Findejeu();
-  saisie.value="";
-};
- Somme();
- btn1.addEventListener("click",Compariason);
- btn2.addEventListener("click",Rejouer);
+  if (nombreTrouve === true) {
+    result.innerText = "You won";
+    result.style.color = "green";
+    audios[0].play();
+    gameOver();
+  }
+  userGuess.value = "";
+}
+
+button.addEventListener("click", guessing);
+document.getElementById("restart").addEventListener("click", Restart);

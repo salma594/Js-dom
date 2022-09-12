@@ -9,18 +9,56 @@
     <title>DOM</title>
   </head>
   <body>
-    <div id="jeu">
-      <h1>Calculates random numbers</h1>
-    <p id="affichage"></p> 
-    <input type="number">
-    <button id="control" class="clac">Verify</button>
+    <h1>This is a guessing Game</h1>
+    <div id="gamArea">
+      <div id="flex">
+        <p>choose a level please</p>
+      </div>
+      <div id="levels">
+        <input
+          type="radio"
+          id="easylvl"
+          name="lvl"
+          value="easylvl"
+          onchange="easylvl();"
+        />
+        <label for="easylvl">Easy</label>
+
+        <input
+          type="radio"
+          id="mlvl"
+          name="lvl"
+          value="mlvl"
+          onchange="mlvl();"
+        />
+        <label for="mlvl">Meduim</label>
+
+        <input
+          type="radio"
+          id="hardlvl"
+          name="lvl"
+          value="hardlvl"
+          onchange="hardlvl();"
+        />
+        <label for="hardlvl">Hard</label>
+      </div>
+      <div id="levelP">
+        <p id="instructions"></p>
+        <p id="chance"></p>
+      </div>
+      <div id="inputField">
+        <input type="text" id="input" />
+        <button>Submit</button>
+      </div>
     </div>
 
-<div id="finJeu">
-  <h1 id="fin"></h1>
-  <p>Would you want to recalculate</p>
-  <button id="reje">Replay</button>
-</div>
+    <p id="results"></p>
+    <button class="button" id="restart">Restart Game</button>
+    <div>
+      <audio src="Audios/Winning Sound Effect.mp3">win</audio>
+      <audio src="Audios/Lose sound effects.mp3">fail</audio>
+    </div>
+    <script src="script.js"></script>
     
     
     <script src="script.js"></script>
