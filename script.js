@@ -58,13 +58,12 @@ function guessing() {
   if (chancenbr === 0 && nombreTrouve === false) {
     result.innerText = "You lost ";
     result.style.color = "red";
-    audios[1].play();
+   
     gameOver();
   }
   if (nombreTrouve === true) {
     result.innerText = "You won";
     result.style.color = "green";
-    audios[0].play();
     gameOver();
   }
   userGuess.value = "";
