@@ -25,3 +25,6 @@ input{
     background-color: black;
     color: white;
 }
+#finJeu{
+    display: none;
+}
