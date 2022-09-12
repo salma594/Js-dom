@@ -5,6 +5,7 @@ let affichage = document.getElementById("affichage");
  let mot = document.getElementById("fin");
  let zoneA = document.getElementById("jeu");
  let zoneB =document.getElementById("finJeu");
+ let audio=document.querySelectorAll("audio");
 
  function Findejeu(){
   zoneA.style.display="none";
@@ -40,10 +41,12 @@ function Compariason(){
   }else if(saisie.value == res){
     mot.innerText= "Excellent you won";
     mot.style.color="green";
+    audio[1].play()
   }
   else{
     mot.innerText= "You lost";
     mot.style.color="red";
+    audio[0].play()
   }
   Findejeu();
   saisie.value="";
