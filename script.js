@@ -34,7 +34,7 @@ form.addEventListener("submit", function (e) {
     invMess.textContent = "Please Enter a Password";
   } else if (inputs["pwd"].value.length != 0 && inputs["pwd"].value.match(char)) {
     inputs["pwd"].className = "is_valid";
-    invMess.textContent = "";
+    invMess.textContent = "Valid password";
     // recuperation de la valeur saisi qui est valide
     const pwd = inputs["pwd"].value;
     console.log(pwd);
