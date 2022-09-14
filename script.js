@@ -1,43 +1,75 @@
-// let form=document.querySelector("form");
-// let nom=form.elements['nom'];
-// let pnom=form.elements['prenom'];
-// console.log(nom.value);
-// console.log(pnom.value);
-// let char=/^[a-zA-Z-\s]$/;
-// form.addEventListener('submit',function(event){
-//     event.preventDefault();
-//     if(nom.value.length==0){
-//         let error=document.getElementById("error");
-//         error.innerText="The box is obligatory please fill in the box";
-//         error.style.color="red";
-//     }else if (char.test(nom.value)=false){
-//         error.innerText="The box is obligatory please fill in the box";
-//         error.style.color="red";
+// let success = true;
+
+// let promesse = new Promise(function (resolve, reject) {
+//   if (success) {
+//     let a = 5;
+//     let b = 25;
+//     let res = a + b;
+//     resolve(res);
+//   } else {
+//     reject("error de calcul");
+//   }
+// });
+
+// promesse.then((res) => {
+//   console.log(res);
+// }) 
+// .catch(function(failure){
+//   console.log(failure);
+// });
+
+ 
+// function nbrePaire(nombre) {
+//   let promesse = new Promise(function (resolve, reject) {
+//     if (nombre % 2 == 0) {
+//       let result = nombre * nombre;
+//       resolve(result);
+//     } else {
+//       reject("le nombre est impair");
 //     }
-// })
+//   });
+//   return promesse;
+// }
 
-// let email="Salma4s@gmail.com"
-// let char = /^[a-zA-Z0-9-]+@[a-zA-Z]+\.[a-z]+$/;
-// console.log(char.test(email));
+// let prom = nbrePaire(3);
+// prom
+//   .then((resultat) => {
+//     console.log(resultat);
+//   })
+//   .catch((erreur) => {
+//     console.log(erreur);
+//   })
 
-let form = document.querySelector("form");
-let pwd = form.elements["pwd"];
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+// function sommeTab(n) {
+//   let nombres = [2, 10, 30, 4, -1, 0];
+//   let somme = 0;
+//   // creation de promesse
+//   let promesse = new Promise(function (resolve, reject) {
+//     // effectuer la somme
+//     if (n <= nombres.length && n > 0) {
+//       for (let i = 0; i < n; i++) {
+//         somme = somme + nombres[i];
+//       }
+//       resolve(somme);
+//     } else {
+//       reject("Index of Array out of bounds");
+//     }
+//   });
+//   return promesse;
+// }
 
-  let char = /^[a-zA-Z0-9._-]{6,12}$/;
-  let inputs = form.elements;
-  let invMess = document.querySelector(".invalid_password");
-  if (inputs["pwd"].value.length == 0) {
-    inputs["pwd"].className = "is_invalid";
-    invMess.textContent = "Please Enter a Password";
-  } else if (inputs["pwd"].value.length != 0 && inputs["pwd"].value.match(char)) {
-    inputs["pwd"].className = "is_valid";
-    invMess.textContent = "Valid password";
-    // recuperation de la valeur saisi qui est valide
-    const pwd = inputs["pwd"].value;
-    console.log(pwd);
-    console.log(pwd.value);
-  }
-});
+// let prom = sommeTab(1);
+// prom
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((res) => {
+//     console.log(res);
+//   });
+
+let promesse = new Promise(function (resolve, reject){
+  let text= "My name is Salma Saidi";
+  let regex= /(\w+)(\w+)(\w+)(\w+)(\w+){5,}/;
+  
+})
