@@ -8,11 +8,12 @@
   body {
     font-family: "Helvetica Neue", sans-serif;
     margin: 25px;
+  
   }
   
   .calculator {
     background: black;
-    
+
     color: white;
     height: 1118px;
     padding: 20px;
