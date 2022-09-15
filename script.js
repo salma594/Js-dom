@@ -143,7 +143,7 @@ let url="https://jsonplaceholder.typicode.com/users";
   //   console.log(info.name, info.email);
   // }
   //  }
-  //   getData("https://jsonplaceholder.typicode.com/users%22);
+  // getData("url");
 
  
 
